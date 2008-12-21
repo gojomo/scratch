@@ -1,9 +1,4 @@
-alert('probe1');
+alert('probe:'+document.domain+' '+document.location.href);
 
-$('#scrapedname').ajaxError(function(ev,req,set,err){alert(err)});
+document.write("<scr"+"ipt>alert('second:'+document.domain+' '+document.location.href);</script>");
 
-alert('probe2');
-
-$.get("http://github.com", {}, function(data) {$('#target').text(data)});
-
-alert('probe3');
