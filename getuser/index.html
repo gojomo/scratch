@@ -11,7 +11,7 @@
 $('#scrapedname').text('1');
 
 function getName() {
-   return $(document.getElementById('inner').contentWindow).find('.name').html();
+   return $(document.getElementById('inner').contentWindow.document).find('.name').text();
 }
 
 $('#scrapedname').text('2');
