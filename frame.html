@@ -9,5 +9,11 @@ n/a</div>
 
 <hr/>
 
-<script src="probe.js">
+<iframe width=100% id="inner" src="http://github.com/gojomo/gojomo.github.com/tree/master"></iframe>
+
+<script>
+var name = $(document.getElementById('inner').contentDocument).find('#name').text();
+alert(name);
 </script>
+
+
