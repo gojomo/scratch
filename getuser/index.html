@@ -1,0 +1,26 @@
+<script src="http://jquery.com/src/jquery-latest.js">
+</script>
+
+<p>Your logged-in username is <span id="scrapedname"></p>
+
+<hr/>
+
+<iframe width=100% id="inner" src="http://github.com/gojomo/gojomo.github.com/tree/master"></iframe>
+
+<script>
+function getName() {
+   return $(document.getElementById('inner')).find('.name').text();
+}
+
+function fillName() {
+   $('#scrapedname').text(getName());
+}
+
+$(function() {
+  $('#inner').load( fillName );
+});
+</script>
+
+<a onclick="fillName();">or click me</a>
+
+
