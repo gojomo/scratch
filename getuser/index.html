@@ -8,26 +8,21 @@
 <iframe width=100% id="inner" src="http://github.com/gojomo/"></iframe>
 
 <script>
-$('#scrapedname').text('1');
 
 function getName() {
    return $(document.getElementById('inner').contentWindow.document).find('.name').text();
 }
-
-$('#scrapedname').text('2');
 
 function fillName() {
    alert(getName());
    $('#scrapedname').text(getName());
 }
 
-$('#scrapedname').text('3');
-
 $(function() {
   $('#inner').load( fillName );
 });
 
-$('#scrapedname').text('n/a');
+$('#scrapedname').html('n/a');
 </script>
 
 <a onclick="fillName">or click me</a>
