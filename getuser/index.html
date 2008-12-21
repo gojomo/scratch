@@ -11,12 +11,13 @@
 $('#scrapedname').text('1');
 
 function getName() {
-   return $(document.getElementById('inner')).find('.name').text();
+   return $(document.getElementById('inner')).find('.name').html();
 }
 
 $('#scrapedname').text('2');
 
 function fillName() {
+   alert(getName());
    $('#scrapedname').text(getName());
 }
 
