@@ -12,11 +12,16 @@ n/a</div>
 <iframe width=100% id="inner" src="http://github.com/gojomo/gojomo.github.com/tree/master"></iframe>
 
 <script>
-$(function() {
-  $('inner').load( function() {
+function getName() {
      alert($(this.contentDocument).find('#name').html());
-  })
+}
+
+$(function() {
+  $('#inner').load( getName );
 });
+
 </script>
+
+<a onclick="getName();">or click me</a>
 
 
