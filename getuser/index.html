@@ -8,7 +8,7 @@ Your logged-in username is
 
 <hr/>
 
-<iframe width=100% id="inner" src="http://github.com/site/privacy"></iframe>
+<iframe width=100% height=300 id="inner" src="http://github.com/site/privacy"></iframe>
 
 <script>
 
@@ -17,6 +17,7 @@ function getName() {
 }
 
 function frameLoaded() {
+   alert('frameLoaded');
    var currName = getName();
    $('#scrapedname').text(currName.length>0?currName:"n/a");
    if (!currName) return;
@@ -35,7 +36,3 @@ $(function() {
 });
 
 </script>
-
-<a onclick="fillName">or click me</a>
-
-
