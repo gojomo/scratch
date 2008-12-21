@@ -1,20 +1,23 @@
 <script src="http://jquery.com/src/jquery-latest.js">
 </script>
 
-<p>Your logged-in username is <span id="scrapedname"></span></p>
+<p>
+Your logged-in username is
+<span id="scrapedname" style="color:red; font-weight:bold" >n/a</span>
+</p>
 
 <hr/>
 
-<iframe width=100% id="inner" src="http://github.com/gojomo/"></iframe>
+<iframe width=100% id="inner" src="http://github.com/site/privacy"></iframe>
 
 <script>
 
 function getName() {
-   return $(document.getElementById('inner').contentWindow.document).find('.name').text();
+   return jQuery.trim($(document.getElementById('inner').contentWindow.document).find('.name').text());
 }
 
 function fillName() {
-   alert(getName());
+   alert(getName()+" - "+getName().length);
    $('#scrapedname').text(getName());
 }
 
