@@ -8,19 +8,27 @@
 <iframe width=100% id="inner" src="http://github.com/gojomo/gojomo.github.com/tree/master"></iframe>
 
 <script>
+$('#scrapedname').text('1');
+
 function getName() {
    return $(document.getElementById('inner')).find('.name').text();
 }
+
+$('#scrapedname').text('2');
 
 function fillName() {
    $('#scrapedname').text(getName());
 }
 
+$('#scrapedname').text('3');
+
 $(function() {
   $('#inner').load( fillName );
 });
+
+$('#scrapedname').text('n/a');
 </script>
 
-<a onclick="fillName();">or click me</a>
+<a onclick="fillName">or click me</a>
 
 
