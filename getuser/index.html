@@ -17,7 +17,6 @@ function getName() {
 }
 
 function frameLoaded() {
-   alert('frameLoaded');
    var currName = getName();
    $('#scrapedname').text(currName.length>0?currName:"n/a");
    if (!currName) return;
